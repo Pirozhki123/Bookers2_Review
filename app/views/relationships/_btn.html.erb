@@ -1,0 +1,7 @@
+<% if current_user != user%> <!--現在のユーザーと表示ユーザーが違う場合-->
+  <% if current_user.following?(user) %> <!--フォローしているユーザーの場合-->
+    <%= link_to "フォロー外す", user_relationships_path(user.id), method: :delete, class: "btn btn-info" %>
+  <% else %> <!--それ以外の場合-->
+    <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn btn-success" %>
+  <% end %>
+<% end %>

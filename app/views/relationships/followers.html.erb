@@ -1,0 +1,6 @@
+<h2>Follower Users</h2>
+<% if @users.exists? %> <!--もしフォローされている人が居る場合-->
+  <%= render '/users/index', users: @users %> <!--フォロワー一覧を描画-->
+<% else %>
+  <p>ユーザーはいません</p>
+<% end %>
